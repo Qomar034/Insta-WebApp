@@ -1,4 +1,5 @@
 import React from "react";
+import PhotoProfile from "./PhotoProfile";
 
 export default function PostCard({ data }) {
   const [showModal, setShowModal] = React.useState(false);
@@ -30,17 +31,7 @@ export default function PostCard({ data }) {
         </div>
         <div className="flex flex-row justify-between my-2 mx-2">
           <div className="flex flex-row gap-2 justify-start items-center">
-            <div
-              className="rounded-full w-7 h-7 aspect-square justify-center items-center flex
-                    bg-gradient-to-r from-red-500 to-yellow-500
-                    hover:from-blue-500 hover:to-green-500"
-            >
-              <img
-                src={data.profileUrl}
-                className="rounded-full aspect-square border-2 border-white"
-                style={{ width: "26px", height: "26px" }}
-              />
-            </div>
+            <PhotoProfile link={data.profileUrl} story={true} width={26}/>
             <p className="text-sm">{data.username}</p>
           </div>
           <div className="flex flex-row justify-between items-center gap-3 w-auto ">
@@ -94,31 +85,11 @@ export default function PostCard({ data }) {
                   </div>
                   <div className="" style={{width: 360}}>
                     <div className="flex items-center justify-between gap-5 p-5 border-b border-solid border-slate-200 rounded-t">
-                      <div
-                        className="rounded-full w-9 h-9 aspect-square justify-center items-center flex
-                    bg-gradient-to-r from-red-500 to-yellow-500
-                    hover:from-blue-500 hover:to-green-500"
-                      >
-                        <img
-                          src={data.profileUrl}
-                          className="rounded-full aspect-square border-2 border-white"
-                          style={{ width: "34px", height: "34px" }}
-                        />
-                      </div>
+                      <PhotoProfile link={data.profileUrl} story={true} width={34}/>
                       <h3 className="text-md font-semibold">{data.username}</h3>
                     </div>
                     <div className="flex items-center justify-between gap-5 p-5 rounded-t">
-                      <div
-                        className="rounded-full w-9 h-9 aspect-square justify-center items-center flex
-                    bg-gradient-to-r from-red-500 to-yellow-500
-                    hover:from-blue-500 hover:to-green-500"
-                      >
-                        <img
-                          src={data.profileUrl}
-                          className="rounded-full aspect-square border-2 border-white"
-                          style={{ width: "34px", height: "34px" }}
-                        />
-                      </div>
+                      <PhotoProfile link={data.profileUrl} story={true} width={34}/>
                       <h3 className="text-md font-semibold">{data.username} {data.caption}</h3>
                     </div>
                   </div>
