@@ -1,3 +1,4 @@
+import axios from "axios"
 import { FETCH_FEEDS, FETCH_POST, FETCH_STORIES} from "./actionTypes"
 
 const baseUrl = `http://localhost:3000/`
@@ -5,11 +6,13 @@ const baseUrl = `http://localhost:3000/`
 export const fetchPosts = () => {
     return async (dispatch, getState) => {
         try {
-            let response = await fetch(`${baseUrl}post`, {method: 'get'})
-            if (!response.ok) throw({name: "Error in fetching posts"})
+            let { data } = await axios.get(`${baseUrl}Post`)
+            console.log(data);
+            // if (!response.ok) throw({name: "Error in fetching posts"})
 
-            let payload = await response.json()
-            await dispatch({ type: FETCH_FEEDS, payload})
+            // let payload = await response.
+            await dispatch({ type: FETCH_FEEDS, data})
+            console.log("here");
         } catch (error) {
             console.log(error);            
         }

@@ -9,5 +9,5 @@ let baseReducer = combineReducers({
     post: postReducer,
 })
 
-let store = createStore(baseReducer, applyMiddleware(thunk));
-export default store
+let stores = createStore(baseReducer, applyMiddleware(thunk));
+export default stores

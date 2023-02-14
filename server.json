@@ -1,0 +1,87 @@
+{
+    "Post": [
+        {
+            "id": 1,
+            "username": "dummy1",
+            "profileUrl": "https://picsum.photos/200?random=1",
+            "postUrl": "https://picsum.photos/500/700?random=1",
+            "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "likes": 1500,
+            "commentsCount": 50
+        },
+        {
+            "id": 2,
+            "username": "dummy2",
+            "profileUrl": "https://picsum.photos/200?random=2",
+            "postUrl": "https://picsum.photos/500/500?random=2",
+            "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "likes": 1500,
+            "commentsCount": 50
+        },
+        {
+            "id": 3,
+            "username": "dummy3",
+            "profileUrl": "https://picsum.photos/200?random=3",
+            "postUrl": "https://picsum.photos/300/400?random=3",
+            "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "likes": 1500,
+            "commentsCount": 50
+        },
+        {
+            "id": 4,
+            "username": "dummy4",
+            "profileUrl": "https://picsum.photos/200?random=4",
+            "postUrl": "https://picsum.photos/400/600?random=4",
+            "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "likes": 1500,
+            "commentsCount": 50
+        },
+        {
+            "id": 5,
+            "username": "dummy5",
+            "profileUrl": "https://picsum.photos/200?random=5",
+            "postUrl": "https://picsum.photos/500/500?random=5",
+            "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "likes": 1500,
+            "commentsCount": 50
+        },
+        {
+            "id": 6,
+            "username": "dummy6",
+            "profileUrl": "https://picsum.photos/200?random=6",
+            "postUrl": "https://picsum.photos/500/700?random=6",
+            "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "likes": 1500,
+            "commentsCount": 50
+        },
+        {
+            "id": 7,
+            "username": "dummy7",
+            "profileUrl": "https://picsum.photos/200?random=7",
+            "postUrl": "https://picsum.photos/500/700?random=7",
+            "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "likes": 1500,
+            "commentsCount": 50
+        },
+        {
+            "id": 8,
+            "username": "dummy8",
+            "profileUrl": "https://picsum.photos/200?random=8",
+            "postUrl": "https://picsum.photos/500/700?random=8",
+            "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "likes": 1500,
+            "commentsCount": 50
+        },
+        {
+            "id": 9,
+            "username": "dummy9",
+            "profileUrl": "https://picsum.photos/200?random=9",
+            "postUrl": "https://picsum.photos/500/700?random=9",
+            "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "likes": 1500,
+            "commentsCount": 50
+        }
+    ]
+
+
+}

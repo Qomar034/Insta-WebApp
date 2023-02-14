@@ -1,7 +1,10 @@
-import Header from "../components/Header";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
 import PostCard from "../components/PostCard";
 import StoryCard from "../components/StoryCard";
+import { fetchPosts } from "../stores/actions/actionCreator";
 
 let data = [
     {
@@ -132,7 +135,33 @@ let stories = [
 ]
 
 export default function Home(){
-    return (
+    // let dispatch = useDispatch()
+    // let {feeds} = useSelector((state) => state.post)
+
+    // useEffect(() => {
+    //     dispatch(fetchPosts())
+    //     .finally(_ => {
+    //         setLoad(false)
+    //     })
+    //     console.log(feeds);
+    // }, [load])
+
+    let [feeds, setFeeds] = useState([])
+    let [load, setLoad] = useState(true)
+
+    const fetchFeed = async () => {
+        try {
+            let {data} =  await axios.get(`http://localhost:3000/post`)
+            setFeeds(data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    useEffect(() => {
+        fetchFeed().finally(_ => setLoad(false))
+    }, [])
+
+    if (!load) return (
         <div className="w-full flex justify-center items-center flex-col">
             <div className="flex gap-5">
                 <div className="fixed left-0">
@@ -154,19 +183,19 @@ export default function Home(){
                         <div></div>
                     <div  className="flex flex-row h-auto my-10">
                         <div className="flex flex-col">
-                            <PostCard data={data[0]}/>
-                            <PostCard data={data[3]}/>
-                            <PostCard data={data[6]}/>
+                            <PostCard data={feeds[0]}/>
+                            <PostCard data={feeds[3]}/>
+                            <PostCard data={feeds[6]}/>
                         </div>
                         <div className="flex flex-col">
-                            <PostCard data={data[1]}/>
-                            <PostCard data={data[4]}/>
-                            <PostCard data={data[7]}/>
+                            <PostCard data={feeds[1]}/>
+                            <PostCard data={feeds[4]}/>
+                            <PostCard data={feeds[7]}/>
                         </div>
                         <div className="flex flex-col">
-                            <PostCard data={data[2]}/>
-                            <PostCard data={data[5]}/>
-                            <PostCard data={data[8]}/>
+                            <PostCard data={feeds[2]}/>
+                            <PostCard data={feeds[5]}/>
+                            <PostCard data={feeds[8]}/>
                         </div>
                     </div>
                     <div></div>
