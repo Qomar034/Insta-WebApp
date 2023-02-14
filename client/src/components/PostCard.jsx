@@ -1,10 +1,31 @@
 import React from "react";
+import CommentCard from "./CommentCard";
 import PhotoProfile from "./PhotoProfile";
+
+import { useImageSize } from 'react-image-size';
+
+let komentar = {
+  username: "comment1",
+  photoUrl: "https://picsum.photos/200?random=20",
+  story: true,
+  comment: "Great Job Buddy",
+  time: "80w"
+}
 
 export default function PostCard({ data }) {
   const [showModal, setShowModal] = React.useState(false);
   const [showLikes, setShowLikes] = React.useState(false);
   const [showComments, setShowComments] = React.useState(false);
+
+  const [photoSize, { loading, error }] = useImageSize(data.postUrl);
+
+  let captionData = {
+    username: data.username,
+    photoUrl: data.profileUrl,
+    story: true,
+    comment: data.caption,
+    time: "80w"
+  }
 
   return (
     <>
@@ -31,7 +52,7 @@ export default function PostCard({ data }) {
         </div>
         <div className="flex flex-row justify-between my-2 mx-2">
           <div className="flex flex-row gap-2 justify-start items-center">
-            <PhotoProfile link={data.profileUrl} story={true} width={26}/>
+            <PhotoProfile link={data.profileUrl} story={true} width={26} />
             <p className="text-sm">{data.username}</p>
           </div>
           <div className="flex flex-row justify-between items-center gap-3 w-auto ">
@@ -81,16 +102,59 @@ export default function PostCard({ data }) {
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <div className="relative p-6 flex flex-row">
                   <div className=" border-r border-solid border-slate-200 rounded-t p-2 mx-1 w-auto h-auto">
-                    <img src={data.postUrl} className="w-auto h-auto" />
-                  </div>
-                  <div className="" style={{width: 360}}>
-                    <div className="flex items-center justify-between gap-5 p-5 border-b border-solid border-slate-200 rounded-t">
-                      <PhotoProfile link={data.profileUrl} story={true} width={34}/>
-                      <h3 className="text-md font-semibold">{data.username}</h3>
+                    <img src={data.postUrl} style={{height: photoSize.height, width: photoSize.width}} />
+                    <div className="flex flex-row justify-between items-center gap-3 w-full my-2 ">
+                      <div className="flex gap-4">
+                        <img
+                          src={"love.png"}
+                          alt="Like Icon"
+                          className="aspect-square"
+                          style={{ width: "26px", height: "26px" }}
+                        />
+                        <img
+                          src={"comment.png"}
+                          alt="Comment Icon"
+                          className="w-6 h-6 aspect-square"
+                        />
+                        <img
+                          src={"sent.png"}
+                          alt="Sent Icon"
+                          className="w-6 h-6 aspect-square"
+                        />
+                      </div>
+                      <div>
+                        <img
+                          src={"save.png"}
+                          alt="Save Icon"
+                          className="w-6 h-6 aspect-square"
+                        />
+                      </div>
                     </div>
-                    <div className="flex items-center justify-between gap-5 p-5 rounded-t">
-                      <PhotoProfile link={data.profileUrl} story={true} width={34}/>
-                      <h3 className="text-md font-semibold">{data.username} {data.caption}</h3>
+                  </div>
+                  <div className="" style={{ width: 360 }}>
+                    <div className="flex items-center justify-between gap-5 p-5 border-b border-solid border-slate-200 rounded-t">
+                      <PhotoProfile
+                        link={data.profileUrl}
+                        story={true}
+                        width={34}
+                      />
+                      <h3 className="text-md font-semibold">{data.username}{photoSize.height}</h3>
+                    </div>
+                    <div className="mt-2 overflow-y-auto overflow-x-hidden w-full" style={{height: (photoSize.height - 100)}}>
+                      <CommentCard data={captionData} type="caption" />
+                      <CommentCard data={komentar} />
+                      <CommentCard data={komentar} />
+                      <CommentCard data={komentar} />
+                      <CommentCard data={komentar} />
+                      <CommentCard data={komentar} />
+                      <CommentCard data={komentar} />
+                      <CommentCard data={komentar} />
+                      <CommentCard data={komentar} />
+                      <CommentCard data={komentar} />
+                      <CommentCard data={komentar} />
+                    </div>
+                    <div className="w-full">
+                      <CommentCard form={true} data={komentar} />
                     </div>
                   </div>
                 </div>
