@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import PostCard from "../components/PostCard";
 import StoryCard from "../components/StoryCard";
 
@@ -98,40 +99,46 @@ let data = [
 export default function Home(){
     return (
         <div className="w-full flex justify-center items-center flex-col">
-            <Header/>
-            <div className="flex justify-center items-center flex-col" style={{width: "1000px"}}>
-                <div className="flex flex-col w-full h-auto my-10">
-                    <div className="flex"></div>
-                    <div className="flex flex-row h-auto overflow-auto gap-5">
-                        <StoryCard/>
-                        <StoryCard/>
-                        <StoryCard/>
-                        <StoryCard/>
-                        <StoryCard/>
-                        <StoryCard/>
-                        <StoryCard/>
-                        <StoryCard/>
-                    </div>
+            {/* <Header/> */}
+            <div className="flex gap-5">
+                <div className="fixed left-0">
+                    <Navbar/>
+
                 </div>
+                <div className="flex justify-center items-center flex-col" style={{width: "1000px"}}>
+                    <div className="flex flex-col w-full h-auto my-10">
+                        <div className="flex"></div>
+                        <div className="flex flex-row h-auto overflow-auto gap-5">
+                            <StoryCard/>
+                            <StoryCard/>
+                            <StoryCard/>
+                            <StoryCard/>
+                            <StoryCard/>
+                            <StoryCard/>
+                            <StoryCard/>
+                            <StoryCard/>
+                        </div>
+                    </div>
+                        <div></div>
+                    <div  className="flex flex-row h-auto my-10">
+                        <div className="flex flex-col">
+                            <PostCard data={data[0]}/>
+                            <PostCard data={data[3]}/>
+                            <PostCard data={data[6]}/>
+                        </div>
+                        <div className="flex flex-col">
+                            <PostCard data={data[1]}/>
+                            <PostCard data={data[4]}/>
+                            <PostCard data={data[7]}/>
+                        </div>
+                        <div className="flex flex-col">
+                            <PostCard data={data[2]}/>
+                            <PostCard data={data[5]}/>
+                            <PostCard data={data[8]}/>
+                        </div>
+                    </div>
                     <div></div>
-                <div  className="flex flex-row h-auto my-10">
-                    <div className="flex flex-col">
-                        <PostCard data={data[0]}/>
-                        <PostCard data={data[3]}/>
-                        <PostCard data={data[6]}/>
-                    </div>
-                    <div className="flex flex-col">
-                        <PostCard data={data[1]}/>
-                        <PostCard data={data[4]}/>
-                        <PostCard data={data[7]}/>
-                    </div>
-                    <div className="flex flex-col">
-                        <PostCard data={data[2]}/>
-                        <PostCard data={data[5]}/>
-                        <PostCard data={data[8]}/>
-                    </div>
                 </div>
-                <div></div>
             </div>
         </div>
     )
