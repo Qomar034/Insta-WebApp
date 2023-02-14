@@ -34,7 +34,7 @@ export default function PostCard({ data }) {
         onClick={() => setShowModal(true)}
       >
         <div className="relative">
-          <img src={data.postUrl} className="h-auto w-80" />
+          <img src={data.postUrl} className="h-auto w-80 aspect-auto" />
           <div className="absolute top-0 right-0 m-1 w-5 h-5 z-10 bg-white opacity-20 hover:opacity-100 items-center justify-center flex rounded">
             <img
               src={"options.png"}
@@ -102,7 +102,13 @@ export default function PostCard({ data }) {
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <div className="relative p-6 flex flex-row">
                   <div className=" border-r border-solid border-slate-200 rounded-t p-2 mx-1 w-auto h-auto">
-                    <img src={data.postUrl} style={{height: photoSize.height, width: photoSize.width}} />
+                    <img
+                      src={data.postUrl}
+                      style={{
+                        height: photoSize.height,
+                        width: photoSize.width,
+                      }}
+                    />
                     <div className="flex flex-row justify-between items-center gap-3 w-full my-2 ">
                       <div className="flex gap-4">
                         <img
@@ -132,15 +138,28 @@ export default function PostCard({ data }) {
                     </div>
                   </div>
                   <div className="" style={{ width: 360 }}>
-                    <div className="flex items-center justify-between gap-5 p-5 border-b border-solid border-slate-200 rounded-t">
-                      <PhotoProfile
-                        link={data.profileUrl}
-                        story={true}
-                        width={34}
-                      />
-                      <h3 className="text-md font-semibold">{data.username}{photoSize.height}</h3>
+                    <div className="flex items-center justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                      <div className="flex items-center justify-center gap-5 ">
+                        <PhotoProfile
+                          link={data.profileUrl}
+                          story={true}
+                          width={34}
+                        />
+                        <h3 className="text-md font-semibold">{data.username}</h3>
+                      </div>
+                      <div className="w-auto h-auto justify-center flex rounded">
+                        <img
+                          src={"options.png"}
+                          alt="Options Icon"
+                          className="w-6 h-6"
+                        />
+                      </div>
                     </div>
-                    <div className="mt-2 overflow-y-auto overflow-x-hidden w-full" style={{height: (photoSize.height - 100)}}>
+
+                    <div
+                      className="mt-2 overflow-y-auto overflow-x-hidden w-full"
+                      style={{ height: photoSize.height - 85 }}
+                    >
                       <CommentCard data={captionData} type="caption" />
                       <CommentCard data={komentar} />
                       <CommentCard data={komentar} />
