@@ -1,17 +1,17 @@
 
-export default function StoryCard(){
+export default function StoryCard({data}){
     return (
-        <div>
-            <div className="rounded-full w-36 aspect-square justify-center items-center flex
+        <div className="flex flex-col justify-center items-center">
+            <div className="rounded-full w-28 aspect-square justify-center items-center flex
                 bg-gradient-to-r from-red-500 to-yellow-500
                 hover:from-blue-500 hover:to-green-500">
                 
                 <img
-                src="https://picsum.photos/200?random=2"
-                className="rounded-full aspect-square border-4 border-white"
-                style={{width: "136px"}} />
+                src={data.url}
+                className="rounded-full aspect-square border-2 border-white"
+                style={{width: "104px"}} />
             </div>
-            <p>Febian23</p>
+            <p className="text-md font-semibold">{data.username}</p>
         </div>
     )
 }

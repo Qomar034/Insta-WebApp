@@ -1,10 +1,10 @@
 import PhotoProfile from "./PhotoProfile";
 
 export default function Navbar({show}){
-    if (show) return (
-        <div className="flex flex-col w-auto h-screen justify-between">
+    if (!show) return (
+        <div className="flex flex-col w-auto h-screen justify-between bg-white">
             <div>
-            <div className="flex w-full justify-center items-center mt-10 mx-2 gap-2 border-b-2 border-solid border-slate-200 rounded-t">
+            <div className="flex w-full h-28 justify-center items-center mt-10 mx-2 gap-2 border-b-2 border-solid border-slate-200 rounded-t">
                     <img src={("ig.png")} className="w-16 h-16 aspect-square"/>
                     <img src={("word.png")} className="w-full h-28 aspect-auto"/>
                 </div>
@@ -53,9 +53,9 @@ export default function Navbar({show}){
         </div>
     )
     else return (
-        <div className="flex flex-col w-auto h-screen justify-between">
+        <div className="flex flex-col w-auto h-screen justify-between bg-white">
             <div>
-            <div className="flex w-full justify-center items-center mt-10 mx-2 gap-2 border-b-2 border-solid border-slate-200 rounded-t">
+            <div className="flex w-full h-28 justify-center items-center mt-10 mx-2 gap-2 border-b-2 border-solid border-slate-200 rounded-t">
                     <img src={("ig.png")} className="w-16 h-16 aspect-square"/>
                 </div>
             </div>

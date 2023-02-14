@@ -96,10 +96,44 @@ let data = [
     },
 ]
 
+let stories = [
+    {
+        url: "https://picsum.photos/200?random=1",
+        username: "stories1"
+    },
+    {
+        url: "https://picsum.photos/200?random=2",
+        username: "stories2"
+    },
+    {
+        url: "https://picsum.photos/200?random=3",
+        username: "stories3"
+    },
+    {
+        url: "https://picsum.photos/200?random=4",
+        username: "stories4"
+    },
+    {
+        url: "https://picsum.photos/200?random=5",
+        username: "stories5"
+    },
+    {
+        url: "https://picsum.photos/200?random=6",
+        username: "stories6"
+    },
+    {
+        url: "https://picsum.photos/200?random=7",
+        username: "stories7"
+    },
+    {
+        url: "https://picsum.photos/200?random=8",
+        username: "stories8"
+    },
+]
+
 export default function Home(){
     return (
         <div className="w-full flex justify-center items-center flex-col">
-            {/* <Header/> */}
             <div className="flex gap-5">
                 <div className="fixed left-0">
                     <Navbar/>
@@ -107,16 +141,14 @@ export default function Home(){
                 </div>
                 <div className="flex justify-center items-center flex-col" style={{width: "1000px"}}>
                     <div className="flex flex-col w-full h-auto my-10">
-                        <div className="flex"></div>
                         <div className="flex flex-row h-auto overflow-auto gap-5">
-                            <StoryCard/>
-                            <StoryCard/>
-                            <StoryCard/>
-                            <StoryCard/>
-                            <StoryCard/>
-                            <StoryCard/>
-                            <StoryCard/>
-                            <StoryCard/>
+                            <StoryCard data={stories[0]}/>
+                            <StoryCard data={stories[1]}/>
+                            <StoryCard data={stories[2]}/>
+                            <StoryCard data={stories[3]}/>
+                            <StoryCard data={stories[4]}/>
+                            <StoryCard data={stories[5]}/>
+                            <StoryCard data={stories[6]}/>
                         </div>
                     </div>
                         <div></div>
