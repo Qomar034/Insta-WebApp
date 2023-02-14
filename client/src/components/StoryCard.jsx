@@ -7,7 +7,7 @@ export default function StoryCard(){
                 hover:from-blue-500 hover:to-green-500">
                 
                 <img
-                src="https://picsum.photos/seed/picsum/200"
+                src="https://picsum.photos/200?random=2"
                 className="rounded-full aspect-square border-4 border-white"
                 style={{width: "136px"}} />
             </div>
