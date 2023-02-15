@@ -7,12 +7,7 @@ export const fetchPosts = () => {
     return async (dispatch, getState) => {
         try {
             let { data } = await axios.get(`${baseUrl}Post`)
-            console.log(data);
-            // if (!response.ok) throw({name: "Error in fetching posts"})
-
-            // let payload = await response.
-            await dispatch({ type: FETCH_FEEDS, data})
-            console.log("here");
+            await dispatch({ type: FETCH_FEEDS, payload: data})
         } catch (error) {
             console.log(error);            
         }
@@ -22,11 +17,8 @@ export const fetchPosts = () => {
 export const fetchStories = () => {
     return async (dispatch, getState) => {
         try {
-            let response = await fetch(`${baseUrl}story`, {method: 'get'})
-            if (!response.ok) throw({name: "Error in fetching stories"})
-
-            let payload = await response.json()
-            await dispatch({ type: FETCH_STORIES, payload})
+            let { data } = await axios.get(`${baseUrl}Story`)
+            await dispatch({ type: FETCH_STORIES, payload: data})
         } catch (error) {
             console.log(error);            
         }
@@ -36,11 +28,8 @@ export const fetchStories = () => {
 export const fetchPostById = (id) => {
     return async (dispatch, getState) => {
         try {
-            let response = await fetch(`${baseUrl}post/1`, {method: 'get'})
-            if (!response.ok) throw({name: `Error in fetching post with id:${id}`})
-
-            let payload = await response.json()
-            await dispatch({ type: FETCH_POST, payload})
+            let { data } = await axios.get(`${baseUrl}Post/${id}`)
+            await dispatch({ type: FETCH_POST, payload:data})
         } catch (error) {
             console.log(error);            
         }
