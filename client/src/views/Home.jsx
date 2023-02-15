@@ -29,31 +29,19 @@ export default function Home(){
                 <div className="flex justify-center items-center flex-col" style={{width: "1000px"}}>
                     <div className="flex flex-col w-full h-auto my-10">
                         <div className="flex flex-row h-auto overflow-auto gap-5">
-                            <StoryCard data={stories[0]}/>
-                            <StoryCard data={stories[1]}/>
-                            <StoryCard data={stories[2]}/>
-                            <StoryCard data={stories[3]}/>
-                            <StoryCard data={stories[4]}/>
-                            <StoryCard data={stories[5]}/>
-                            <StoryCard data={stories[6]}/>
+                            {stories.map(el => <StoryCard data={el}/> )}
                         </div>
                     </div>
                         <div></div>
                     <div  className="flex flex-row h-auto my-10">
                         <div className="flex flex-col">
-                            <PostCard data={feeds[0]}/>
-                            <PostCard data={feeds[3]}/>
-                            <PostCard data={feeds[6]}/>
+                            {feeds.map((el, i) => (i % 3 == 0 ? <PostCard data={el}/> : null) )}
                         </div>
                         <div className="flex flex-col">
-                            <PostCard data={feeds[1]}/>
-                            <PostCard data={feeds[4]}/>
-                            <PostCard data={feeds[7]}/>
+                            {feeds.map((el, i) => ((i-1) % 3 == 0 ? <PostCard data={el}/> : null) )}
                         </div>
                         <div className="flex flex-col">
-                            <PostCard data={feeds[2]}/>
-                            <PostCard data={feeds[5]}/>
-                            <PostCard data={feeds[8]}/>
+                            {feeds.map((el, i) => ((i-2) % 3 == 0 ? <PostCard data={el}/> : null) )}
                         </div>
                     </div>
                     <div></div>
