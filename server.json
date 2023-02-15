@@ -81,6 +81,54 @@
             "likes": 1500,
             "commentsCount": 50
         }
+    ],
+
+    "Story" : [
+        {
+            "id": 1,
+            "url": "https://picsum.photos/200?random=1",
+            "username": "stories1"
+        },
+        {
+            "id": 2,
+            "url": "https://picsum.photos/200?random=2",
+            "username": "stories2"
+        },
+        {
+            "id": 3,
+            "url": "https://picsum.photos/200?random=3",
+            "username": "stories3"
+        },
+        {
+            "id": 4,
+            "url": "https://picsum.photos/200?random=4",
+            "username": "stories4"
+        },
+        {
+            "id": 5,
+            "url": "https://picsum.photos/200?random=5",
+            "username": "stories5"
+        },
+        {
+            "id": 6,
+            "url": "https://picsum.photos/200?random=6",
+            "username": "stories6"
+        },
+        {
+            "id": 7,
+            "url": "https://picsum.photos/200?random=7",
+            "username": "stories7"
+        },
+        {
+            "id": 8,
+            "url": "https://picsum.photos/200?random=8",
+            "username": "stories8"
+        },
+        {
+            "id": 9,
+            "url": "https://picsum.photos/200?random=9",
+            "username": "stories9"
+        }
     ]
 
 
