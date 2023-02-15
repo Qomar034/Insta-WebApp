@@ -54,7 +54,7 @@ export default function Home(){
                             {feeds.map((el, i) => ((i-2) % 3 == 0 ? <PostCard data={el}/> : null) )}
                         </div>
                     </div>
-                    <div></div>
+                    <button type="button" className="w-full h-12 py-2 bg-blue-500 mb-20">Load More</button>
                 </div>
             </div>
         </div>
