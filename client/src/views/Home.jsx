@@ -22,8 +22,8 @@ export default function Home(){
     if (feeds && feeds.length !== 0 && stories && stories.length !== 0) return (
         <div className="w-full flex justify-center items-center flex-col">
             <div className="flex gap-5">
-                <div className="fixed left-0">
-                    <Navbar/>
+                <div className="fixed left-0 w-auto">
+                    <Navbar show={false}/>
 
                 </div>
                 <div className="flex justify-center items-center flex-col" style={{width: "1000px"}}>
