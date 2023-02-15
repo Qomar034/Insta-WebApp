@@ -3,8 +3,8 @@ import PhotoProfile from "./PhotoProfile";
 export default function CommentCard({data, type, form}){
     if (!type) type = "comment"
     return (
-        <div className="w-80 flex gap-1 bg-white p-1">
-            <div className="mx-2">
+        <div className="w-auto h-auto flex gap-1 bg-white p-1">
+            <div className="mx-2 w-10 h-auto">
                 <PhotoProfile link={data.photoUrl} story={data.story} width={34} />
             </div>
             { form ? (
@@ -15,7 +15,7 @@ export default function CommentCard({data, type, form}){
                 </form>
             </div>
             ) : (
-            <div>
+            <div className="w-72">
                 <div>
                     <span className="text-md font-bold">{data.username}</span>
                     <span>{"   "}</span>

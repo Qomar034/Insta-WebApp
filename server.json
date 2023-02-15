@@ -129,7 +129,89 @@
             "url": "https://picsum.photos/200?random=9",
             "username": "stories9"
         }
+    ],
+
+    "Comment" : [
+        {
+            "id": 1,
+            "postId": 1,
+            "username": "comment1",
+            "photoUrl": "https://picsum.photos/200?random=11",
+            "story": false,
+            "comment": "Good Job",
+            "time": "80w"
+        },
+        {
+            "id": 2,
+            "postId": 1,
+            "username": "comment2",
+            "photoUrl": "https://picsum.photos/200?random=12",
+            "story": true,
+            "comment": "Love Your Picture",
+            "time": "80w"
+        },
+        {
+            "id": 3,
+            "postId": 1,
+            "username": "comment3",
+            "photoUrl": "https://picsum.photos/200?random=13",
+            "story": false,
+            "comment": "Imagine coming home to this view. Everyday would be so amazing. Cant wait this to come true.",
+            "time": "80w"
+        },
+        {
+            "id": 4,
+            "postId": 1,
+            "username": "comment4",
+            "photoUrl": "https://picsum.photos/200?random=14",
+            "story": false,
+            "comment": "So Inspiring",
+            "time": "80w"
+        },
+        {
+            "id": 5,
+            "postId": 1,
+            "username": "comment5",
+            "photoUrl": "https://picsum.photos/200?random=15",
+            "story": true,
+            "comment": "Watching this is blessing",
+            "time": "80w"
+        },
+        {
+            "id": 6,
+            "postId": 1,
+            "username": "comment6",
+            "photoUrl": "https://picsum.photos/200?random=16",
+            "story": false,
+            "comment": "You owe me your stories",
+            "time": "80w"
+        },
+        {
+            "id": 7,
+            "postId": 1,
+            "username": "comment7",
+            "photoUrl": "https://picsum.photos/200?random=17",
+            "story": false,
+            "comment": "VISIT ME WHEN U'RE HOME",
+            "time": "80w"
+        },
+        {
+            "id": 8,
+            "postId": 1,
+            "username": "comment8",
+            "photoUrl": "https://picsum.photos/200?random=18",
+            "story": false,
+            "comment": "Love it!",
+            "time": "80w"
+        },
+        {
+            "id": 9,
+            "postId": 1,
+            "username": "comment9",
+            "photoUrl": "https://picsum.photos/200?random=19",
+            "story": true,
+            "comment": "WAIT FOR ME!",
+            "time": "80w"
+        }
     ]
-
-
 }

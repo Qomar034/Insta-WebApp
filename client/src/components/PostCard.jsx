@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CommentCard from "./CommentCard";
 import PhotoProfile from "./PhotoProfile";
 
 import { useImageSize } from 'react-image-size';
+import { useDispatch, useSelector } from "react-redux";
+import { fetchComments } from "../stores/actions/actionCreator";
 
 let komentar = {
   username: "comment1",
@@ -16,8 +18,9 @@ export default function PostCard({ data }) {
   const [showModal, setShowModal] = React.useState(false);
   const [showLikes, setShowLikes] = React.useState(false);
   const [showComments, setShowComments] = React.useState(false);
-
   const [photoSize, { loading, error }] = useImageSize(data.postUrl);
+  const dispatch = useDispatch()
+  const {comments} = useSelector((state) => state.post)
 
   let captionData = {
     username: data.username,
@@ -27,7 +30,11 @@ export default function PostCard({ data }) {
     time: "80w"
   }
 
-  return (
+  useEffect(()=> {
+    dispatch(fetchComments())
+  }, [])
+
+  if (comments && comments.length) return (
     <>
       <div
         className="m-1 border rounded w-80"
@@ -161,16 +168,7 @@ export default function PostCard({ data }) {
                       style={{ height: photoSize.height - 85 }}
                     >
                       <CommentCard data={captionData} type="caption" />
-                      <CommentCard data={komentar} />
-                      <CommentCard data={komentar} />
-                      <CommentCard data={komentar} />
-                      <CommentCard data={komentar} />
-                      <CommentCard data={komentar} />
-                      <CommentCard data={komentar} />
-                      <CommentCard data={komentar} />
-                      <CommentCard data={komentar} />
-                      <CommentCard data={komentar} />
-                      <CommentCard data={komentar} />
+                      {comments.map(el => <CommentCard data={el} />)}
                     </div>
                     <div className="w-full">
                       <CommentCard form={true} data={komentar} />

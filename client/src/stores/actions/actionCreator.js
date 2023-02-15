@@ -1,5 +1,5 @@
 import axios from "axios"
-import { FETCH_FEEDS, FETCH_POST, FETCH_STORIES} from "./actionTypes"
+import { FETCH_FEEDS, FETCH_POST, FETCH_STORIES, FETCH_COMMENTS } from "./actionTypes"
 
 const baseUrl = `http://localhost:3000/`
 
@@ -25,11 +25,11 @@ export const fetchStories = () => {
     }
 }
 
-export const fetchPostById = (id) => {
+export const fetchComments = () => {
     return async (dispatch, getState) => {
         try {
-            let { data } = await axios.get(`${baseUrl}Post/${id}`)
-            await dispatch({ type: FETCH_POST, payload:data})
+            let { data } = await axios.get(`${baseUrl}Comment`)
+            await dispatch({ type: FETCH_COMMENTS, payload:data })
         } catch (error) {
             console.log(error);            
         }
