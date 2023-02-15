@@ -28,7 +28,7 @@ export default function Navbar({user}) {
                 </div>
                 <div className="flex gap-5 justify-start items-center rounded mx-3 p-1 hover:bg-slate-200">
                     <img src={("chat.png")} className="w-10 h-10 aspect-square" />
-                    <div className="text-md font-semibold">Messanger</div>
+                    <div className="text-md font-semibold">Messenger</div>
                 </div>
                 <div className="flex gap-5 justify-start items-center rounded mx-3 p-1 hover:bg-slate-200">
                     <img src={("love.png")} className="w-10 h-10 aspect-square" />
