@@ -1,12 +1,8 @@
-import { useReducer, useState } from "react";
+import { useState } from "react";
 import PhotoProfile from "./PhotoProfile";
 
-let user = {
-    username: "Marqofy",
-    photoUrl: "https://picsum.photos/200?random=99"
-}
-export default function Navbar() {
-    let [show, setShow] = useState(true)
+export default function Navbar({user}) {
+    let [show, setShow] = useState(false)
 
     if (show) return (
         <div className="flex flex-row w-60 h-screen bg-white border-r-2 border-solid border-slate-200 rounded-t">
@@ -51,7 +47,7 @@ export default function Navbar() {
             </div>
             </div>
             <div className="w-auto px-1 flex justify-center items-center" onClick={() => setShow(false)}>
-                <img src={("left.png")} className="w-auto h-6 aspect-auto" />
+                <img src={("left.png")} alt="Hide Icon" className="w-auto h-6 aspect-auto" />
             </div>
         </div>
     )
@@ -91,7 +87,7 @@ export default function Navbar() {
                 </div>
             </div>
             <div className="w-auto px-1 flex justify-center items-center" onClick={() => setShow(true)}>
-                <img src={("right.png")} className="w-auto h-6 aspect-auto" />
+                <img src={("right.png")} alt="Show Icon" className="w-auto h-6 aspect-auto" />
             </div>
         </div>
     )

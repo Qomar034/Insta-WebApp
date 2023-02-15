@@ -7,15 +7,12 @@ export default function CommentCard({data, type, form}){
             <div className="mx-2">
                 <PhotoProfile link={data.photoUrl} story={data.story} width={34} />
             </div>
-            
             { form ? (
             <div className="flex flex-col items-center justify-center relative w-full">
                 <form className="flex items-center justify-between w-full gap-2">
                     <input type="text" placeholder="Add a comment" className="w-auto p-1 border-0"/>
                     <button type="submit" className="text-md text-white bg-blue-400 border rounded p-1 absolute right-0">Post</button>
                 </form>
-                
-                
             </div>
             ) : (
             <div>
@@ -34,12 +31,3 @@ export default function CommentCard({data, type, form}){
         </div>
     )
 }
-
-/*
-data = {
-    username: "comment1",
-    photoUrl: "https://picsum.photos/200?random=20",
-    story: true,
-    comment: "Great Job Buddy"
-}
-*/
