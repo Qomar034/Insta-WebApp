@@ -1,8 +1,8 @@
 import axios from "axios"
 import { FETCH_FEEDS, FETCH_POST, FETCH_STORIES, FETCH_COMMENTS } from "./actionTypes"
 
-const baseUrl = `http://localhost:3000/`
-// const baseUrl = `https://instawebapp.up.railway.app/`
+// const baseUrl = `http://localhost:3000/`
+const baseUrl = `https://instawebapp.up.railway.app/`
 
 export const fetchPosts = () => {
     return async (dispatch, getState) => {
