@@ -24,6 +24,9 @@ module.exports = {
       likes: {
         type: Sequelize.INTEGER
       },
+      liked: {
+        type: Sequelize.BOOLEAN
+      },
       commentsCount: {
         type: Sequelize.INTEGER
       },

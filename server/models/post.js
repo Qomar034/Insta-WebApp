@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     postUrl: DataTypes.STRING,
     caption: DataTypes.TEXT,
     likes: DataTypes.NUMBER,
+    liked: DataTypes.BOOLEAN,
     commentsCount: DataTypes.NUMBER
   }, {
     sequelize,

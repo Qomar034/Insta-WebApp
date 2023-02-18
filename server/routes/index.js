@@ -28,4 +28,16 @@ router.get('/Comment', async ( req, res, next ) => {
     }
 })
 
+router.post('/Comment', async ( req, res, next ) => {
+    try {
+        let { postId, username, photoUrl, story, comment, time } = req.body
+
+        await Comment.create({ postId, username, photoUrl, story, comment, time })
+        res.status(201).json({message: `Comments Created`})
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
+
 module.exports = router
