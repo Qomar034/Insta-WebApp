@@ -4,7 +4,7 @@ import PhotoProfile from "./PhotoProfile";
 
 import { useImageSize } from 'react-image-size';
 import { useDispatch, useSelector } from "react-redux";
-import { fetchComments } from "../stores/actions/actionCreator";
+import { changeLike, fetchComments } from "../stores/actions/actionCreator";
 
 let komentar = {
   username: "comment1",
@@ -17,6 +17,7 @@ let komentar = {
 export default function PostCard({ data, user}) {
   const [showModal, setShowModal] = React.useState(false);
   const [showLikes, setShowLikes] = React.useState(false);
+  const [liked, setLiked] = React.useState(data.liked);
   const [showComments, setShowComments] = React.useState(false);
   const [photoSize, { loading, error }] = useImageSize(data.postUrl);
   const dispatch = useDispatch()
@@ -30,6 +31,12 @@ export default function PostCard({ data, user}) {
     time: "80w"
   }
 
+  let handleLike = () => {
+    // setLiked(!liked)
+    // console.log(data.id);
+    dispatch(changeLike(data.id)).then(_ => setLiked(!liked))
+  }
+
   useEffect(()=> {
     dispatch(fetchComments())
   }, [])
@@ -38,10 +45,9 @@ export default function PostCard({ data, user}) {
     <>
       <div
         className="m-1 border rounded w-80"
-        onClick={() => setShowModal(true)}
       >
         <div className="relative">
-          <img src={data.postUrl} className="h-auto w-80 aspect-auto" />
+          <img onClick={() => setShowModal(true)} src={data.postUrl} className="h-auto w-80 aspect-auto hover:cursor-pointer" />
           <div className="absolute top-0 right-0 m-1 w-5 h-5 z-10 bg-white opacity-20 hover:opacity-100 items-center justify-center flex rounded">
             <img
               src={"options.png"}
@@ -64,12 +70,13 @@ export default function PostCard({ data, user}) {
           </div>
           <div className="flex flex-row justify-between items-center gap-3 w-auto ">
             <div
-              className="flex flex-row items-center justify-center gap-1"
+              className="flex flex-row items-center justify-center gap-1 hover:cursor-pointer"
               onMouseEnter={() => setShowLikes(true)}
               onMouseLeave={() => setShowLikes(false)}
+              onClick={handleLike}
             >
               <img
-                src={"love.png"}
+                src={ liked ? "loveRed.png" : "love.png" }
                 alt="Like Icon"
                 className="aspect-square"
                 style={{ width: "14px", height: "14px" }}
@@ -78,12 +85,12 @@ export default function PostCard({ data, user}) {
             </div>
 
             <div
-              className="flex flex-row items-center justify-center gap-1"
+              className="flex flex-row items-center justify-center gap-1 hover:cursor-pointer"
               onMouseEnter={() => setShowComments(true)}
               onMouseLeave={() => setShowComments(false)}
+              onClick={() => setShowModal(true)}
             >
               <img
-                onClick={() => setShowModal(true)}
                 src={"comment.png"}
                 alt="Comment Icon"
                 className="w-3 h-3 aspect-square"
@@ -118,17 +125,35 @@ export default function PostCard({ data, user}) {
                     />
                     <div className="flex flex-row justify-between items-center gap-3 w-full my-2 ">
                       <div className="flex gap-4">
-                        <img
-                          src={"love.png"}
-                          alt="Like Icon"
-                          className="aspect-square"
-                          style={{ width: "26px", height: "26px" }}
-                        />
-                        <img
-                          src={"comment.png"}
-                          alt="Comment Icon"
-                          className="w-6 h-6 aspect-square"
-                        />
+                        <div
+                          className="flex flex-row items-center justify-center gap-1"
+                          onMouseEnter={() => setShowLikes(true)}
+                          onMouseLeave={() => setShowLikes(false)}
+                          onClick={handleLike}
+                        >
+                          <img
+                            src={ liked ? "loveRed.png" : "love.png" }
+                            alt="Like Icon"
+                            className="aspect-square"
+                            style={{ width: "26px", height: "26px" }}
+                          />
+                          {showLikes ? <p className="text-sm">{data.likes}</p> : null}
+                        </div>
+                        <div
+                          className="flex flex-row items-center justify-center gap-1 hover:cursor-pointer"
+                          onMouseEnter={() => setShowComments(true)}
+                          onMouseLeave={() => setShowComments(false)}
+                        >
+                          <img
+                            src={"comment.png"}
+                            alt="Comment Icon"
+                            className="w-6 h-6 aspect-square"
+                          />
+
+                          {showComments ? (
+                            <p className="text-sm">{data.commentsCount}</p>
+                          ) : null}
+                        </div>
                         <img
                           src={"sent.png"}
                           alt="Sent Icon"

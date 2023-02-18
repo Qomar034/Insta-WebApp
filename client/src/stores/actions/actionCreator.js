@@ -47,3 +47,14 @@ export const postComments = (comment) => {
         }
     }
 }
+
+export const changeLike = (id) => {
+    return async (dispatch, getState) => {
+        try {
+            let { data } = await axios.put(`${baseUrl}Post`, {id})
+            return data
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
