@@ -39,5 +39,19 @@ router.post('/Comment', async ( req, res, next ) => {
     }
 })
 
+router.put('/Post', async ( req, res, next ) => {
+    try {
+        let { id } = req.body
+
+        let calledPost = await Post.findByPk(id)
+        const liked = calledPost.liked
+
+        calledPost.update({liked: !liked})
+        res.status(200).json({message: `${liked}, ${!liked}`})
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
 
 module.exports = router
