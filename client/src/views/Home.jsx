@@ -37,7 +37,7 @@ export default function Home(){
                             <p className="text-sm">view all</p>
                         </div>
                         <div className="flex flex-row h-auto overflow-auto gap-4 py-5 border rounded">
-                            {stories.map(el => <StoryCard data={el}/> )}
+                            {stories.map((el, i) => <StoryCard key={i} data={el}/> )}
                         </div>
                     </div>
                     <div className="flex flex-col justify-start items-center">
@@ -45,13 +45,13 @@ export default function Home(){
                     </div>
                     <div className="flex flex-row h-auto my-5">
                         <div className="flex flex-col">
-                            {feeds.map((el, i) => (i % 3 == 0 ? <PostCard data={el}/> : null) )}
+                            {feeds.map((el, i) => (i % 3 == 0 ? <PostCard key={i} data={el} user={user}/> : null) )}
                         </div>
                         <div className="flex flex-col">
-                            {feeds.map((el, i) => ((i-1) % 3 == 0 ? <PostCard data={el}/> : null) )}
+                            {feeds.map((el, i) => ((i-1) % 3 == 0 ? <PostCard key={i} data={el} user={user}/> : null) )}
                         </div>
                         <div className="flex flex-col">
-                            {feeds.map((el, i) => ((i-2) % 3 == 0 ? <PostCard data={el}/> : null) )}
+                            {feeds.map((el, i) => ((i-2) % 3 == 0 ? <PostCard key={i} data={el} user={user}/> : null) )}
                         </div>
                     </div>
                     <button type="button" className="w-full h-12 py-2 bg-blue-500 mb-20">Load More</button>

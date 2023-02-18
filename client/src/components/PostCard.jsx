@@ -14,7 +14,7 @@ let komentar = {
   time: "80w"
 }
 
-export default function PostCard({ data }) {
+export default function PostCard({ data, user}) {
   const [showModal, setShowModal] = React.useState(false);
   const [showLikes, setShowLikes] = React.useState(false);
   const [showComments, setShowComments] = React.useState(false);
@@ -168,10 +168,10 @@ export default function PostCard({ data }) {
                       style={{ height: photoSize.height - 85 }}
                     >
                       <CommentCard data={captionData} type="caption" />
-                      {comments.map(el => <CommentCard data={el} />)}
+                      {comments.map((el, i) => <CommentCard key={i} data={el} />)}
                     </div>
                     <div className="w-full">
-                      <CommentCard form={true} data={komentar} />
+                      <CommentCard form={true} data={komentar} user={user} />
                     </div>
                   </div>
                 </div>
